@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laporan Orang Tua</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="laporan-page">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Kelas Digital 4.0</a>
+    </div>
+  </nav>
+
+  <header class="hero-sub text-white text-center d-flex align-items-center justify-content-center">
+    <div>
+      <h1 class="fw-bold">Laporan untuk Orang Tua</h1>
+      <p class="lead">Pantau perkembangan belajar anak secara langsung</p>
+    </div>
+  </header>
+
+  <div class="container my-5">
+    <h4 class="mb-3">Progress Belajar</h4>
+    <table class="table table-striped table-hover align-middle shadow-sm rounded">
+
+        <tr>
+          <th>Nama Siswa</th>
+          <th>Modul Diikuti</th>
+          <th>Persentase Selesai</th>
+          <th>Catatan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rizky</td>
+          <td>Dasar Jaringan, Mikrotik, Cisco, Linux, HTML</td>
+          <td><span class="badge bg-success">90%</span></td>
+          <td>Aktif dan cepat memahami materi</td>
+        </tr>
+        <tr>
+          <td>Yusuf</td>
+          <td>Dasar Jaringan, Mikrotik, Cisco, Linux, HTML</td>
+          <td><span class="badge bg-success">90%</span></td>
+          <td>Aktif dan cepat memahami materi</td>
+        </tr>
+        <tr>
+          <td>Inayah</td>
+          <td>Linux, Debian Server</td>
+          <td><span class="badge bg-success">80%</span></td>
+          <td>Aktif dan pandai konfigurasi debian server</td>
+        </tr>
+        <tr>
+          <td>Galib</td>
+          <td>Dasar, Mikrotik</td>
+          <td><span class="badge bg-success">80%</span></td>
+          <td>Aktif dan pandai setting jaringan</td>
+        </tr>
+        <tr>
+          <td>Saky</td>
+          <td>Dasar, Mikrotik</td>
+          <td><span class="badge bg-success">80%</span></td>
+          <td>Aktif dan pandai setting jaringan</td>
+        </tr>
+        <tr>
+          <td>Hakam</td>
+          <td>Linux, Debian Server</td>
+          <td><span class="badge bg-success">80%</span></td>
+          <td>Aktif dan pandai konfigurasi debian server</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center mt-4">
+      <a href="index.html" class="btn btn-outline-secondary">Kembali ke Halaman Awal</a>
+    </div>
+  </div>
+
+  <footer class="text-center text-muted py-4">
+    <small>Dibuat oleh - Rizky | SMK Negeri 2 Takalar</small>
+  </footer>
+  <script>
+    document.addEventListener("mousemove", function (e) {
+  const spark = document.createElement("div");
+  spark.classList.add("spark");
+  spark.style.left = e.clientX + "px";
+  spark.style.top = e.clientY + "px";
+  document.body.appendChild(spark);
+
+  setTimeout(() => {
+    spark.remove();
+  }, 800);
+});
+  </script>
+</body>
+</html>

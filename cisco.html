@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Cisco - Kelas Digital 4.0</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #fd0000, #f17a7a);
+        }
+        .container {
+            background: #ffffffcc;
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        h1, h3 {
+            color: #00695c;
+        }
+        p {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 6px;
+        }
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        button {
+            background-color: #00695c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .back-btn {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .spark {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, gold, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="modul.html" class="back-btn"><button>Kembali ke Halaman Modul</button></a>
+        <h1>Cisco</h1>
+
+        <h3>Penjelasan Materi</h3>
+        <p>
+            Cisco adalah perusahaan jaringan yang terkenal dengan perangkat keras dan lunaknya seperti router, switch,
+            dan firewall. Cisco juga menyediakan pelatihan dan sertifikasi seperti CCNA, CCNP, untuk membekali para profesional
+            jaringan dengan pengetahuan dan keahlian teknis.
+        </p>
+
+        <h3>Latihan Soal (Pilihan Ganda)</h3>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Cisco terkenal sebagai?</p>
+                <label><input type="radio" name="q1" value="salah">Produsen laptop</label>
+                <label><input type="radio" name="q1" value="salah">Penyedia layanan cloud</label>
+                <label><input type="radio" name="q1" value="benar">Perusahaan jaringan</label>
+            </div>
+
+            <div class="question">
+                <p>2. Apa itu CCNA?</p>
+                <label><input type="radio" name="q2" value="salah">Jenis switch</label>
+                <label><input type="radio" name="q2" value="benar">Sertifikasi jaringan</label>
+                <label><input type="radio" name="q2" value="salah">Perangkat router</label>
+            </div>
+
+            <div class="question">
+                <p>3. Fungsi dari router adalah?</p>
+                <label><input type="radio" name="q3" value="salah">Menghubungkan printer</label>
+                <label><input type="radio" name="q3" value="benar">Menghubungkan antar jaringan</label>
+                <label><input type="radio" name="q3" value="salah">Merekam data</label>
+            </div>
+
+            <div class="question">
+                <p>4. Cisco Packet Tracer adalah?</p>
+                <label><input type="radio" name="q4" value="salah">Firewall Cisco</label>
+                <label><input type="radio" name="q4" value="benar">Simulator jaringan</label>
+                <label><input type="radio" name="q4" value="salah">Jenis kabel</label>
+            </div>
+
+            <div class="question">
+                <p>5. Apa protokol routing dinamis yang umum digunakan?</p>
+                <label><input type="radio" name="q5" value="benar">OSPF</label>
+                <label><input type="radio" name="q5" value="salah">FTP</label>
+                <label><input type="radio" name="q5" value="salah">SMTP</label>
+            </div>
+
+            <button type="button" onclick="checkAnswers()">Kirim Jawaban</button>
+            
+        </form>
+
+        <p class="result" id="scoreResult"></p>
+    </div> 
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const questions = ["q1", "q2", "q3", "q4", "q5"];
+            for (let q of questions) {
+                const selected = document.querySelector('input[name="' + q + '"]:checked');
+                if (selected && selected.value === "benar") {
+                    score += 1;
+                }
+            }
+            const result = document.getElementById("scoreResult");
+            result.innerText = "Skor kamu: " + score + " dari 5";
+            result.style.color = score === 5 ? "green" : "orange";
+        }
+    </script>
+    <script>
+        document.addEventListener("mousemove", function (e) {
+  const spark = document.createElement("div");
+  spark.classList.add("spark");
+  spark.style.left = e.clientX + "px";
+  spark.style.top = e.clientY + "px";
+  document.body.appendChild(spark);
+
+  setTimeout(() => {
+    spark.remove();
+  }, 800);
+});
+    </script>
+</body>
+</html>

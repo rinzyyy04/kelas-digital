@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Mikrotik - Kelas Digital 4.0</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #84fab0, #8fd3f4);
+        }
+        .container {
+            background: #ffffffcc;
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        h1, h3 {
+            color: #1565c0;
+        }
+        p {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 6px;
+        }
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        button {
+            background-color: #1565c0;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0d47a1;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .back-btn {
+            margin-bottom: 20px;
+            display: inline-block;
+            background: #2e7d32;
+        }
+        .spark {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, gold, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="modul.html" class="back-btn"><button>Kembali ke Halaman Modul</button></a>
+        <h1>Mikrotik</h1>
+
+        <h3>Penjelasan Materi</h3>
+        <p>
+            Mikrotik adalah sistem operasi dan perangkat lunak yang dapat digunakan untuk menjadikan komputer
+            sebagai router network yang handal. Dengan Mikrotik, lo bisa mengatur IP Address, DHCP, Firewall,
+            Routing, dan banyak fitur jaringan lainnya. Mikrotik biasanya dikonfigurasi menggunakan Winbox,
+            WebFig, atau terminal.
+        </p>
+
+        <h3>Latihan Soal (Pilihan Ganda)</h3>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Mikrotik digunakan untuk?</p>
+                <label><input type="radio" name="q1" value="benar">Mengelola jaringan</label>
+                <label><input type="radio" name="q1" value="salah">Mengetik dokumen</label>
+                <label><input type="radio" name="q1" value="salah">Mengedit video</label>
+            </div>
+
+            <div class="question">
+                <p>2. Winbox adalah?</p>
+                <label><input type="radio" name="q2" value="salah">Browser</label>
+                <label><input type="radio" name="q2" value="benar">Aplikasi konfigurasi Mikrotik</label>
+                <label><input type="radio" name="q2" value="salah">Antivirus</label>
+            </div>
+
+            <div class="question">
+                <p>3. DHCP pada Mikrotik berfungsi untuk?</p>
+                <label><input type="radio" name="q3" value="salah">Menyalakan komputer</label>
+                <label><input type="radio" name="q3" value="benar">Memberikan IP otomatis</label>
+                <label><input type="radio" name="q3" value="salah">Memblokir situs</label>
+            </div>
+
+            <div class="question">
+                <p>4. Apa nama fitur Mikrotik untuk membatasi bandwidth?</p>
+                <label><input type="radio" name="q4" value="salah">Firewall</label>
+                <label><input type="radio" name="q4" value="benar">Queue</label>
+                <label><input type="radio" name="q4" value="salah">Bridge</label>
+            </div>
+
+            <div class="question">
+                <p>5. Perintah dasar Mikrotik untuk melihat IP adalah?</p>
+                <label><input type="radio" name="q5" value="salah">ipconfig</label>
+                <label><input type="radio" name="q5" value="benar">/ip address print</label>
+                <label><input type="radio" name="q5" value="salah">show ip</label>
+            </div>
+
+            <button type="button" onclick="checkAnswers()">Kirim Jawaban</button>
+        </form>
+
+        <p class="result" id="scoreResult"></p>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const questions = ["q1", "q2", "q3", "q4", "q5"];
+            for (let q of questions) {
+                const selected = document.querySelector('input[name="' + q + '"]:checked');
+                if (selected && selected.value === "benar") {
+                    score += 1;
+                }
+            }
+            const result = document.getElementById("scoreResult");
+            result.innerText = "Skor kamu: " + score + " dari 5";
+            result.style.color = score === 5 ? "green" : "orange";
+        }
+    </script>
+    <script>
+        document.addEventListener("mousemove", function (e) {
+  const spark = document.createElement("div");
+  spark.classList.add("spark");
+  spark.style.left = e.clientX + "px";
+  spark.style.top = e.clientY + "px";
+  document.body.appendChild(spark);
+
+  setTimeout(() => {
+    spark.remove();
+  }, 800);
+});
+    </script>
+</body>
+</html>
