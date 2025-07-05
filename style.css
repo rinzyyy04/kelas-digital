@@ -343,4 +343,97 @@ footer {
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
   }
 
-  
+  .motivasi-bar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #00ffd5;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  border-top: 1px solid #00ffd5;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+#motivasiText {
+  display: inline-block;
+  animation: scroll-move 10s linear infinite;
+}
+
+@keyframes scroll-move {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+#typingText {
+  min-height: 20px;
+  font-size: 20px;
+  font-weight: 300; /* tipis, bukan bold */
+  color: #ffffff;
+  font-family: 'Segoe UI', 'Poppins', 'Roboto', sans-serif;
+  text-shadow: none; /* biar gak kelihatan berat */
+  letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 768px) {
+  /* Hero section lebih pas di layar kecil */
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  #typingText {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .motivasi-bar {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  /* Card tampil penuh & rapi */
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .row-cols-md-3 > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+  }
+
+  /* Tombol dark mode & hacker mode pas */
+  #darkModeToggle,
+  #hackerToggle {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    margin-top: 10px;
+  }
+
+  /* Logo SMK lebih kecil */
+  .logo-smk {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer small {
+    font-size: 0.8rem;
+  }
+
+  /* Motivasi bar animasi tetap lancar */
+  #motivasiText {
+    font-size: 14px;
+    animation-duration: 15s;
+  }
+}
