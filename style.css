@@ -377,46 +377,50 @@ footer {
   letter-spacing: 0.5px;
 }
 
+/* SKALA FONT RESPONSIF & ANTI KEPOTONG */
+html {
+  font-size: 100%;
+}
+
 @media screen and (max-width: 768px) {
-  /* Biar teks wrap otomatis dan gak overflow */
-  h1, h2, h3, p, .card-title, .card-text, .lead, .slogan {
-    word-wrap: break-word;
+  html {
+    font-size: 90%; /* Auto kecilin semua font */
+  }
+
+  .hero h1 {
+    font-size: 6vw; /* Ukuran judul fleksibel ngikutin lebar layar */
+    line-height: 1.2;
+  }
+
+  #typingText {
+    font-size: 4.5vw; /* Efek ketikan fleksibel juga */
+    line-height: 1.4;
+    word-break: break-word;
     white-space: normal;
   }
 
-  .hero {
-    padding: 20px 15px;
-    text-align: center;
+  .card-title {
+    font-size: 5vw;
   }
 
-  .card-body {
-    padding: 15px;
+  .card-text {
+    font-size: 4vw;
   }
 
-  .card-text, .card-title {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-
-  .lead.typing {
-    font-size: 16px;
-    padding: 0 12px;
-    line-height: 1.6;
-  }
-
-  /* Biar tombol gak terlalu kecil */
+  .nav-link,
+  .navbar-brand,
   .btn {
-    font-size: 14px;
-    padding: 8px 16px;
-    margin-top: 10px;
+    font-size: 3.5vw;
   }
 
-  /* Navbar font resize */
-  .navbar-brand {
-    font-size: 1.1rem;
+  .motivasi-bar {
+    font-size: 3.5vw;
   }
 
-  .nav-link {
-    font-size: 0.95rem;
+  .container,
+  .card-body,
+  .hero {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
