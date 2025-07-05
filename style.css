@@ -378,62 +378,45 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  /* Hero section lebih pas di layar kecil */
-  .hero h1 {
-    font-size: 1.8rem;
+  /* Biar teks wrap otomatis dan gak overflow */
+  h1, h2, h3, p, .card-title, .card-text, .lead, .slogan {
+    word-wrap: break-word;
+    white-space: normal;
   }
 
-  #typingText {
-    font-size: 16px;
+  .hero {
+    padding: 20px 15px;
     text-align: center;
-    padding: 0 10px;
   }
 
-  .motivasi-bar {
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-text, .card-title {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .lead.typing {
+    font-size: 16px;
+    padding: 0 12px;
+    line-height: 1.6;
+  }
+
+  /* Biar tombol gak terlalu kecil */
+  .btn {
     font-size: 14px;
-    padding: 8px 0;
-  }
-
-  /* Card tampil penuh & rapi */
-  .card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .row-cols-md-3 > .col {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  .card-title {
-    font-size: 1.1rem;
-  }
-
-  .card-text {
-    font-size: 0.95rem;
-  }
-
-  /* Tombol dark mode & hacker mode pas */
-  #darkModeToggle,
-  #hackerToggle {
-    font-size: 0.9rem;
-    padding: 5px 10px;
+    padding: 8px 16px;
     margin-top: 10px;
   }
 
-  /* Logo SMK lebih kecil */
-  .logo-smk {
-    width: 30px;
-    height: 30px;
+  /* Navbar font resize */
+  .navbar-brand {
+    font-size: 1.1rem;
   }
 
-  footer small {
-    font-size: 0.8rem;
-  }
-
-  /* Motivasi bar animasi tetap lancar */
-  #motivasiText {
-    font-size: 14px;
-    animation-duration: 15s;
+  .nav-link {
+    font-size: 0.95rem;
   }
 }
